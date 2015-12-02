@@ -1,0 +1,8 @@
+services:
+    colin_exception.exception_listner:
+        class: Colin\Bundle\ExceptionBundle\EventListener\ExceptionListener
+        arguments:
+            - @templating
+            - %colin_exception.exceptions%
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }

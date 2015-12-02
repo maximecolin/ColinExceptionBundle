@@ -18,11 +18,11 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('colin_action');
+        $rootNode = $treeBuilder->root('colin_exception');
 
         $rootNode
             ->children()
-                ->arrayNode('exceptions')
+                ->variableNode('exceptions')
                     ->treatNullLike([])
                     ->defaultValue([])
                 ->end()
